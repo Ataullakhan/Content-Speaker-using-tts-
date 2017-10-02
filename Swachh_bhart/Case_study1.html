@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Text_to_Speech Demo</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../bower_components/leaflet/dist/leaflet.css" rel="stylesheet">
+        <link href="../css/mapstyle.css" rel="stylesheet"> -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/base-min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap-3.0.3.min.js"></script>
+        <script src="js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Text to Speech Demo</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../Swachh_bhart/Case_study1.html">Case_study_1</a>
+                    </li>
+                    <li >
+                        <a href="../ipl/Case_study2.html">Case_study_2</a>
+                    </li>
+                    <li >
+                        <a href="../About/About.html">About us</a>
+                    </li>
+                </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <button id="Stop" onclick="stop_S()" type="button">Stop</button>
+    <button class='play_pause' id="pause_play" data-control="pause">Pause</button>
+        <script>
+            $(".play_pause").click(function () {
+                $(this).text(function(i, v){
+                   return v === 'Pause' ? 'Play' : 'Pause'
+                })
+            });
+        </script>
+  <style>
+    .jumbotron {
+      background-color: #BFEFFF; /* BLUE */
+      color: #111111; /* BLACK */
+      font-weight: bold;
+      border: 5px solid #39CCCC; /* BLUE */
+      font-size: 120%;
+      padding: 100px 25px;
+    }
+    button#Speak:focus
+    {
+        background:olive;
+    }
+    button#Stop:focus
+    {
+        background:red;
+    }
+    button#pause_play:focus
+    {
+        background:olive;
+    }
+  
+  </style>
+  <script type="text/javascript">
+    var switch_control = {'pause': 'play', 'play': 'pause'}
+    $(document).on('click', '#pause_play', function(){
+      var control = $(this).attr('data-control')
+      $(this).attr('data-control', switch_control[control])
+      if(control==='pause'){pause()}
+      if(control==='play'){play()}
+    })
+  </script>
+  </ul>
+            <ul class="nav navbar-nav navbar">
+                    <li >
+                        <a rel="next" href="../index.html">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../ipl/Case_study2.html">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#introduction">Swachh Bhart Abhiyan</a></li>
+        <li class="main "><a href="#table">Table</a></li>
+            <li><a href="#charts">Chart</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+        <section id='introduction'>
+            <h2 class='page-header'><span>Swachh Bharat Abhiyan</span></h2>
+            <p class='lead'>
+              <b>VIT University</b> VIT University was established with the aim of providing quality higher education on par with international standards. It persistently seeks and adopts innovative methods to improve the quality of higher education on a consistent basis.The campus has a cosmopolitan atmosphere with students from all corners of the globe. Experienced and learned teachers are strongly encouraged to nurture the students. The global standards set at VIT in the field of teaching and research spur us on in our relentless pursuit of excellence. In fact, it has become a way of life for us. The highly motivated youngsters on the campus are a constant source of pride. Our Memoranda of Understanding with various international universities are our major strength. They provide for an exchange of students and faculty and encourage joint research projects for the mutual benefit of these universities. Many of our students, who pursue their research projects in foreign universities, bring high quality to their work and esteem to India and have done us proud. With steady steps, we continue our march forward. We look forward to meeting you here at VIT.
+            </p>
+        </section><!-- /#introduction -->
+            <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+            <script type="text/javascript" src="text2speech_1.js"></script>
+            <script src ="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.2/d3.min.js" type= "text/javascript">
+            </script>
+            <button id="Speak" onclick="bolbabybol_1()">Speak</button>
+            <!-- <button id="Stop" onclick="stop_S()" type="button">Stop</button> -->
+          <!-- ============================================================= -->
+          </section>
+<h2 id="table">Top 10 Cleanest Cities in India</h2>
+<div class="box-body">
+  <table id="table" class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Branch</th>
+        <th>number of students</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>MCA</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>Chandigarh</td>
+        <td>1716</td>
+        <td>Chandigarh</td>
+      </tr>
+      <tr>
+        <td>Tiruchirappalli</td>
+        <td>1715</td>
+        <td>Tamil Nad5u</td>
+      </tr>
+      
+      <tr>
+        <td>Delhi-NDMC</td>
+        <td>1704</td>
+        <td>Delhi</td>
+      </tr>
+      <tr>
+        <td>Visakhapatnam</td>
+        <td>1643</td>
+        <td>Andhra Pradesh</td>
+      </tr>
+      <tr>
+        <td>Surat</td>
+        <td>1605</td>
+        <td>Gujarat</td>
+      </tr>
+      <tr>
+        <td>Rajkot</td>
+        <td>1574</td>
+        <td>Gujarat</td>
+      </tr>
+      <tr>
+        <td>Gangtok   </td>
+        <td>1565</td>
+        <td>Sikkim</td>
+      </tr>
+      <tr>
+        <td>Pimpri Chinchwad</td>
+        <td>1559</td>
+        <td>Maharashtra </td>
+      </tr>
+      <tr>
+        <td>Greater Mumbai</td>
+        <td>1534</td>
+        <td>Maharashtra</td>
+      </tr>
+    </tbody>
+  </table>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="text2speech.js"></script>
+  <script type="text/javascript" src="table_call.js">
+  </script>
+  <button id="Speak" onclick="bolbabybol_table1()">Speak </button>
+    
+</div>
+<h3>Charts</h3>
+<style>
+body {
+  font-family: "Exo 2", sans-serif;
+  background: #DDD;
+  color: #333;
+}
+
+h1 {
+  margin: 0;
+  padding: 0.1rem 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+.widget {
+  display: inline-block;
+  border: 1px solid #AAA;
+  background: white;
+}
+
+#chart {
+  height: 400px;
+  width: 500px;
+}
+
+svg {
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  /*fill: #A18FDB;*/
+  fill:green;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 300;
+  fill: #333;
+}
+
+.label {
+  font-size: 18px;
+  fill: #333;
+}
+
+.axis path
+   {
+    fill:none;
+    //stroke: #333;
+  }
+  .axis,.tick line {
+    stroke-width: 1;
+    stroke: rgba(0,0,0,0.1);
+  }
+ .axis{
+  //fill: #333;
+  font-size: 12px;
+
+
+</style> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script> 
+<script src="http://d3js.org/d3.v3.js"></script>
+<!-- </head> -->
+<!-- <body> -->
+<div class="widget">
+  <h1>city vs score</h1>
+  <div id="chart"></div>  
+</div>
+<script>
+// var data = [
+//   ["mysure",1749],
+//   ["Chandigarh",1716], 
+//   ["Tiruchirappali", 1715], 
+//   ["Delhi-NDMC",1704],
+//   ["Visakhapatnam",1643],
+//   ["Surat",1605],
+//   ["Rajkot",1574],
+//   ["Gangtok",1565],
+//   ["Pimpri Chinchwad",1559],
+//   ["Greater Mumbai",1534],]
+d3.csv("data.csv", function(data){
+
+
+var chart = document.getElementById("chart"),
+    axisMargin = 20,
+    margin = 20,
+    valueMargin = 4,
+    width = chart.offsetWidth,
+    height = chart.offsetHeight,
+    barHeight = (height-axisMargin-margin*2)* 0.4/data.length,
+    barPadding = (height-axisMargin-margin*2)*0.6/data.length,
+    data, bar, svg, scale, xAxis, labelWidth = 0;
+
+max = d3.max(data.map(function(i){ 
+  return i['Score'];
+}));
+
+svg = d3.select(chart)
+  .append("svg")
+  .attr("width", width)
+  .attr("height", 400);
+
+
+bar = svg.selectAll("g")
+  .data(data)
+  .enter()
+  .append("g");
+
+bar.attr("class", "bar")
+  .attr("cx",0)
+  .attr("transform", function(d, i) { 
+     return "translate(" + margin + "," + (i * (barHeight + barPadding) + barPadding) + ")";
+  });
+
+bar.append("text")
+  .attr("class", "label")
+  .attr("y", barHeight / 2)
+  .attr("dy", ".35em") //vertical align middle
+  .text(function(d){
+    return d['City'];
+  }).each(function() {
+    labelWidth = Math.ceil(Math.max(labelWidth, this.getBBox().width));
+  });
+
+scale = d3.scale.linear()
+  .domain([0, max])
+  .range([0, width - margin*2 - labelWidth]);
+
+xAxis = d3.svg.axis()
+  .scale(scale)
+  .tickSize(-height + 2*margin + axisMargin)
+  .orient("bottom");
+
+bar.append("rect")
+  .attr("transform", "translate("+labelWidth+", 0)")
+  .attr("height", barHeight)
+  .attr("width", function(d){
+    return scale(d['Score']);
+  });
+
+bar.append("text")
+  .attr("class", "value")
+  .attr("y", barHeight / 2)
+  .attr("dx", -valueMargin + labelWidth) //margin right
+  .attr("dy", ".35em") //vertical align middle
+  .attr("text-anchor", "end")
+  .text(function(d){
+    return d['Score'];
+  })
+ .attr("x", function(d){
+    var width = this.getBBox().width;
+    return Math.max(width + valueMargin, scale(d['Score']));
+  });
+
+
+svg.insert("g",":first-child")
+ .attr("class", "axis")
+ .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
+ .call(xAxis);
+})
+</script>
+<script type="text/javascript" src="read_barchart.js"></script>
+<script type="text/javascript" src="text2speech_bar.js"></script>
+<script type="text/javascript">
+</script>
+<button id="Speak" onclick="bolbabybol()">Speak_Chart</button>
+
+    </body>
+</html>

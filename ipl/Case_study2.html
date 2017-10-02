@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Text_to_Speech Demo</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/base-min.css" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../bower_components/leaflet/dist/leaflet.css" rel="stylesheet">
+        <link href="../css/mapstyle.css" rel="stylesheet"> -->
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap-3.0.3.min.js"></script>
+        <script src="js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">Text to Speech Demo</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../Swachh_bhart/Case_study1.html">Case_study_1</a>
+                    </li>
+                    <li >
+                        <a href="../ipl/Case_study2.html">Case_study_2</a>
+                    </li>
+                    <li >
+                        <a href="../About/About.html">About us</a>
+                    </li>
+                </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <button id="Stop" onclick="stop_S()" type="button">Stop</button>
+    <button class='play_pause' id="pause_play" data-control="pause">Pause</button>
+        <script>
+            $(".play_pause").click(function () {
+                $(this).text(function(i, v){
+                   return v === 'Pause' ? 'Play' : 'Pause'
+                })
+            });
+        </script>
+  <style>
+    .jumbotron {
+      background-color: #BFEFFF; /* BLUE */
+      color: #111111; /* BLACK */
+      font-weight: bold;
+      border: 5px solid #39CCCC; /* BLUE */
+      font-size: 120%;
+      padding: 100px 25px;
+    }
+    button#Speak:focus
+    {
+        background:olive;
+    }
+    button#Stop:focus
+    {
+        background:red;
+    }
+    button#pause_play:focus
+    {
+        background:olive;
+    }
+  
+  </style>
+  <script type="text/javascript">
+    var switch_control = {'pause': 'play', 'play': 'pause'}
+    $(document).on('click', '#pause_play', function(){
+      var control = $(this).attr('data-control')
+      $(this).attr('data-control', switch_control[control])
+      if(control==='pause'){pause()}
+      if(control==='play'){play()}
+    })
+  </script>
+  </ul>
+            <ul class="nav navbar-nav navbar">
+              <li >
+                  <a rel="next" href="../Swachh_bhart/Case_study1.html">
+                      <i class="fa fa-arrow-left"></i> Previous
+                  </a>
+              </li>
+              <li >
+                  <a rel="prev" href="../About/About.html">
+                      Next <i class="fa fa-arrow-right"></i>
+                  </a>
+              </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#introduction">IPL-Indian Premier League</a></li>
+        <li class="main "><a href="#table">Table</a></li>
+            <li><a href="#charts">Chart</a></li>
+            
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+        <section id='introduction'>
+            <h2 class='page-header'><span>Indian Premier League</span></h2>
+            <p class='lead'>
+              The <b>Indian Premier League (IPL)</b> is a professional Twenty20 cricket league in India contested during April and May of every year by franchise teams representing Indian cities. The league was founded by the Board of Control for Cricket in India (BCCI) in 2007.[1] The title sponsor of the IPL in 2016 was Vivo Electronics, thus the league is officially known as the Vivo Indian Premier League. The current IPL title holders are Sunrisers Hyderabad.
+
+              The IPL is the most-attended cricket league in the world and ranks sixth among all sports leagues.[2] In 2010, the IPL became the first sporting event in the world to be broadcast live on YouTube.[3][4] The brand value of IPL was estimated to be US$4.5 billion in 2015 by American Appraisal, A Division of Duff and Phelps.[5] According to BCCI, the 2015 IPL season contributed ₹11.5 billion (US$182 million) to the GDP of the Indian economy.[6] Duff and Phelps added that the value of brand IPL has jumped to $4.16 billion after the 2016 edition, against $3.54 billion in 2015. The 19% jump is despite the fact that the US dollar to Indian rupee currency has depreciated by nearly 10%.
+            </p>
+        </section><!-- /#introduction -->
+            <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+            <script type="text/javascript" src="text2speech_1.js"></script>
+            <script src ="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.2/d3.min.js" type= "text/javascript">
+            </script>
+            <button id="Speak" onclick="bolbabybol()">Speak</button>
+          <!-- ============================================================= -->
+          </section>
+<h2 id="table">Current teams</h2>
+<div class="box-body">
+  <table id="table" class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Team</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Captain</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Delhi Daredevils</td>
+        <td>Delhi</td>
+        <td>Delhi</td>
+        <td>Zaheer Khan</td>
+
+      </tr>
+      <tr>
+        <td>Kings XI Punjab   </td>
+        <td>Mohali</td>
+        <td>Punjab</td>
+        <td>Glenn Maxwell</td>
+      </tr>
+      <tr>
+        <td>Kolkata Knight Riders</td>
+        <td>Kolkata</td>
+        <td>West Bengal</td>
+        <td>Gautam Gambhir</td>
+      </tr>
+      
+      <tr>
+        <td>Mumbai Indians</td>
+        <td>Mumbai</td>
+        <td>Maharashtra</td>
+        <td>Rohit Sharma</td>
+      </tr>
+      <tr>
+        <td>Royal Challengers Bangalore  </td>
+        <td>Bangalore</td>
+        <td>Karnataka</td>
+        <td>Virat Kohli</td>
+      </tr>
+      <tr>
+        <td>Sunrisers Hyderabad</td>
+        <td>Hyderabad</td>
+        <td>Telangana</td>
+        <td>David Warner</td>
+      </tr>
+      <tr>
+        <td>Rising Pune Supergiant    </td>
+        <td>Pune</td>
+        <td>Maharashtra</td>
+        <td>Steve Smith</td>
+      </tr>
+      <tr>
+        <td>Gujarat Lions</td>
+        <td>Rajkot</td>
+        <td>Gujarat</td>
+        <td>Suresh Raina</td>
+      </tr>
+    </tbody>
+  </table>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="text2speech.js"></script>
+  <script type="text/javascript" src="table_call.js">
+  </script>
+  <button id="Speak" onclick="bolbabybol_table1()">Speak </button>
+    
+</div>
+<h1 id="charts">Charts</h1>
+
+<meta charset="utf-8">
+<style>
+
+.arc text {
+  font: 17px sans-serif;
+  text-anchor: Left;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+</style>
+<!-- <body> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 1500,
+    height = 400,
+    radius = Math.min(width, height) / 2;
+
+var color = d3.scale.ordinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+var arc = d3.svg.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(radius - 70);
+
+var pie = d3.layout.pie()
+    .sort(null)
+    .value(function(d) { return d.brandvalue; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+var data = d3.csv("data.csv", type, function(error, data) {
+  if (error) throw error;
+
+  var g = svg.selectAll(".arc")
+      .data(pie(data))
+    .enter().append("g")
+      .attr("class", "arc");
+
+  g.append("path")
+      .attr("d", arc)
+      .style("fill", function(d) { return color(d.data.team); });
+
+  g.append("text")
+      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+      .attr("dy", ".35em")
+      .text(function(d) { return d.data.team; });
+});
+
+function type(d) {
+  d.brandvalue = +d.brandvalue;
+  return d;
+}
+</script>
+
+<script type="text/javascript" src="read_doughnut_chart.js"></script>
+<script type="text/javascript" src="text2speech_doughnut.js"></script>
+<script type="text/javascript">
+</script>
+<button id="Speak" onclick="bolbabybol()">Speak_Chart</button>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+	"pitch": 1,
+	"volume": 1,
+	"read_speed": 1,
+	"voice_type": "native",
+	"no_message_text": "No message passed, please read the document.",
+	"language": "en-US",
+	"punc": "/[.,]+/"
+}

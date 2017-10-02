@@ -1,0 +1,20 @@
+{
+  "name": "text2speech",
+  "description": "javascript and css dependencies",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "d3": "^3.0"
+  }
+}

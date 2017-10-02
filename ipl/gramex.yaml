@@ -1,0 +1,17 @@
+app:
+  settings:
+    autoreload: False
+    debug: False
+    auth: False
+  listen:
+    port: 9988
+
+
+url:
+  full Name:
+    pattern: /myname/
+    handler: FunctionHandler
+    kwargs:
+      function: brain.call_date
+      headers:
+        Content-Type: application/json
